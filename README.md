@@ -12,5 +12,10 @@ This repository contains real-world scenarios implemented using JavaScript Promi
    - Simulates async image loading.  
    - Uses `Promise.race`, `Promise.allSettled`, and error handling.  
 
+3. [User Profiles & Posts](./03_user_profile_posts/README.md)  
+   - Fetch profiles and posts asynchronously.  
+   - Examples in parallel, series, and extended details.  
+
+
 ## 🚀 Goal
 This repo is part of my journey to master asynchronous programming in JavaScript. Each scenario reflects real-world cases where async logic is crucial.

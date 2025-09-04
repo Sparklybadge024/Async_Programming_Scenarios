@@ -16,6 +16,10 @@ This repository contains real-world scenarios implemented using JavaScript Promi
    - Fetch profiles and posts asynchronously.  
    - Examples in parallel, series, and extended details.  
 
+4. [Competing Servers (Promise.race)](./04_competing_servers/README.md)  
+   - Simulates fetching from multiple servers with random delays.  
+   - Demonstrates `Promise.race()` behavior.  
+
 
 ## 🚀 Goal
 This repo is part of my journey to master asynchronous programming in JavaScript. Each scenario reflects real-world cases where async logic is crucial.

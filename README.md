@@ -1,14 +1,16 @@
-# Async JS Real-World Scenario 1: User Authentication
+# Async Programming Scenarios in JavaScript
 
-This file contains 3 types of implementations for a user authentication system using JavaScript Promises:
+This repository contains real-world scenarios implemented using JavaScript Promises and asynchronous programming techniques.
 
-1. **Type 1**: Check username and password together
-2. **Type 2**: Separate username and password verification
-3. **Type 3**: Add a new user and set password asynchronously
+## 📂 Scenarios
 
-It demonstrates asynchronous behavior using `setTimeout` and Promise chaining.
+1. [User Authentication](./01_user_auth/README.md)  
+   - Check username and password with async simulation.  
+   - Add new users and assign passwords.  
 
-## Notes
-- Type 1: Basic username/password check
-- Type 2: Shows sequential async checks for username and password
-- Type 3: Demonstrates adding a new user and setting a password asynchronously
+2. [Image Loading](./02_image_loading/README.md)  
+   - Simulates async image loading.  
+   - Uses `Promise.race`, `Promise.allSettled`, and error handling.  
+
+## 🚀 Goal
+This repo is part of my journey to master asynchronous programming in JavaScript. Each scenario reflects real-world cases where async logic is crucial.

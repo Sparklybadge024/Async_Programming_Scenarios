@@ -5,25 +5,25 @@ let Electronics=[
         variant:43+" inches",
         price:25999,
         productVisualization:["Image1","Image2","Image3","Video1"],
-        number_of_Items:10,
+        Stock:10,
         features:["Dolby Digital Plus","Clarity-Next Level of Picture Perfection","178 -Maximize Your Viewpoint","2GB RAM","Ports-Effortless Connections","Smart Remote"]},
         {productTitle:"acer 127 cms (50 inch) Elevate (2024 Series) QLED TV Smart Google TV with Google OS | Dolby Atmos |AP43UG51QEVTD",
         variant:50+" inches",
         price:30999,
         productVisualization:["Image1","Image2","Image3","Video1"],
-        number_of_Items:10,
+        Stock:10,
         features:["Dolby Digital Plus","Clarity-Next Level of Picture Perfection","178 -Maximize Your Viewpoint","2GB RAM","Ports-Effortless Connections","Smart Remote"]},
         {productTitle:"acer 139 cms (55 inch) Elevate (2024 Series) QLED TV Smart Google TV with Google OS | Dolby Atmos |AP43UG51QEVTD",
         variant:55+" inches",
         price:35799,
         productVisualization:["Image1","Image2","Image3","Video1"],
-        number_of_Items:10,
+        Stock:10,
         features:["Dolby Digital Plus","Clarity-Next Level of Picture Perfection","178 -Maximize Your Viewpoint","2GB RAM","Ports-Effortless Connections","Smart Remote"]},
         {productTitle:"acer 164 cms (65 inch) Elevate (2024 Series) QLED TV Smart Google TV with Google OS | Dolby Atmos |AP43UG51QEVTD",
         variant:65+" inches",
         price:45999,
         productVisualization:["Image1","Image2","Image3","Video1"],
-        number_of_Items:10,
+        Stock:10,
         features:["Dolby Digital Plus","Clarity-Next Level of Picture Perfection","178 -Maximize Your Viewpoint","2GB RAM","Ports-Effortless Connections","Smart Remote"]},
         ],
         Laptop:{
@@ -41,28 +41,28 @@ let Electronics=[
      variant:"43 Inches",
      price:25000,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     },
     {productTitle:"Xiaomi MI 125 cm (50 inches) X Series 4K LED Smart Google TV L50MA-AUIN (Black)",
      variant:"50 Inches",
      price:28999,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     },
     {productTitle:"Xiaomi MI 138 cm (55 inches) X Series 4K LED Smart Google TV L55MA-AIN (Black)",
      variant:"55 Inches",
      price:36999,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     },
     {productTitle:"Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)",
      variant:"65 Inches",
      price:45000,
-     productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     productVisualization:["Image1","Image2","Image3","Video12"],
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     }],
 
@@ -76,28 +76,28 @@ let Electronics=[
      variant:"43 Inches",
      price:24999,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     },
-    {productTitle:"Xiaomi MI 125 cm (50 inches) X Series 4K LED Smart Google TV L50MA-AUIN (Black)",
+    {productTitle:"Philips 125 cm (50 inches) X Series 4K LED Smart Google TV L50MA-AUIN (Black)",
      variant:"50 Inches",
      price:28999,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     },
-    {productTitle:"Xiaomi MI 138 cm (55 inches) X Series 4K LED Smart Google TV L55MA-AIN (Black)",
+    {productTitle:"Philips 138 cm (55 inches) X Series 4K LED Smart Google TV L55MA-AIN (Black)",
      variant:"55 Inches",
      price:36999,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     },
-    {productTitle:"Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)",
+    {productTitle:"Philips 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)",
      variant:"65 Inches",
      price:45000,
      productVisualization:["Image1","Image2","Image3","Video1"],
-     number_of_Items:10,
+     Stock:10,
      features:["4k Ultra HD Dolby Vision Display","Bezel-less design","30W Cinamatic Speakers","Dolby audio","dtsX","PitchWall+"]   
     }],
 
@@ -117,7 +117,7 @@ let accessories=[]
 
 let onlineStore=[Electronics,fashion,sports,home,accessories]//Let's assume as if this is an online store.
 
-function productAddition(catagory,bName,title,variante,pricee,productVis,number_of_Items,featur,subCat){
+function productAddition(catagory,bName,title,variante,pricee,productVis,quantity,featur,subCat){
    
    for(let a of onlineStore){
     let brandFound=false;
@@ -129,7 +129,7 @@ function productAddition(catagory,bName,title,variante,pricee,productVis,number_
             variant:variante,
             price:pricee,
             productVisualization:productVis,
-            number_of_Items:quantity,
+            Stock:quantity,
             features:featur
            });
            
@@ -146,7 +146,7 @@ function productAddition(catagory,bName,title,variante,pricee,productVis,number_
                  variant:variante,
                  price:pricee,
                  productVisualization:productVis,
-                 number_of_Items:number_of_Items,
+                 Stock:quantity,
                  features:featur}    ]        
                 },
                 
@@ -174,46 +174,54 @@ console.log(accessories);
 console.log(Electronics);
 
 
-let result=[];
+
 function search(str){
-   
+return new Promise((resolve,reject)=>{
+setTimeout(()=>{
+   let result=[];   
    for(let product of onlineStore){
       
       for(let pro of product){
          if(pro.Products[str]!==undefined){
-         result.push(pro.Products[str]);
+         for(let proo of pro.Products[str]){
+            
+               result.push(proo);
+            
+         }
          }
       }
       
    }
+   resolve(result)
    if(result.length===0){
-      return `No products were found`
+      reject("Product not found")
    }
+},500)
+})
 
-   
-
-return result;
 }
 
 
+let searchedItem;
+
+let productSearch=search("TV").then(n=>console.log(n)).catch(n=>console.log(n))
 
 
-console.log(search("TV"));
 
-
-let cart=[]
 function addToCart(str){
-   for(let i of result){
-      for(let j of i){
-         if(j.productTitle===str){
-           cart.push(j)
+   return search("TV").then(n=>{
+      let cart=[];
+
+      for(let i of n){
+         if(i.productTitle===str){
+            cart.push(i)
          }
       }
-   }
-   return cart
+      return cart;
+   })
 }
 
-console.log(addToCart("Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)"));
+addToCart("Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)").then(n=>console.log("Your Cart:",n)).catch(n=>console.log(n))
 
 
 

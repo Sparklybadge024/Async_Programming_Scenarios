@@ -32,7 +32,7 @@ let Electronics=[
         Gaming_Laptop:[]
         }}
 
-},
+},//This will act as our inventory...
 
 {brandName:"Xiaomi MI",
  Products:{
@@ -113,12 +113,12 @@ let sports=[]
 let home=[]
 let accessories=[]
 
-
+// Above are separate categories along with their products.
 
 let onlineStore=[Electronics,fashion,sports,home,accessories]//Let's assume as if this is an online store.
-
+let onlineStoreBank=0;
 function productAddition(catagory,bName,title,variante,pricee,productVis,quantity,featur,subCat){
-   
+   // Function for product addition for 1st party and 3rd party sellers...
    for(let a of onlineStore){
     let brandFound=false;
     if(a===catagory){
@@ -176,6 +176,7 @@ console.log(Electronics);
 
 
 function search(str){
+   // Function to find products of a particular category
 return new Promise((resolve,reject)=>{
 setTimeout(()=>{
    let result=[];   
@@ -202,19 +203,23 @@ setTimeout(()=>{
 }
 
 
-let searchedItem;
+
 
 let productSearch=search("TV").then(n=>console.log(n)).catch(n=>console.log(n))
 
 
 
-function addToCart(str,category){
+function addToCart(str,category,qty){
+   //function to add products to the cart...
    let cart=[];
    return search(category).then(n=>{
       
 
       for(let i of n){
          if(i.productTitle===str){
+            i.quantity=qty;
+            i.subTotalCost=qty*i.price;
+            i.Stock-=i.quantity;
             cart.push(i)
          }
       }
@@ -227,51 +232,45 @@ function addToCart(str,category){
 
 
 function chooseProduct(productArr){
+   // This function uses addToCart functionality and add products to the cart to checkout...
    let arr=[];
    for(let i of productArr){
-      arr.push(addToCart(i.str,i.category));
+      arr.push(addToCart(i.str,i.category,i.qty));
    }
-   return Promise.all(arr).then(n=>n.filter(n=>n.length!=0)).then(n=>{console.log("Your Cart:",n); return n})
+   return Promise.all(arr).then(n=>n.filter(n=>n.length!=0)).then(n=>{return n})
 }
 
-let multiPro=[{category:"TV",str:"Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)"},{category:"TV",str:"Philips 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)"}]
+function showCart(pArr){
+   // This function shows what is in the cart
+   chooseProduct(pArr).then(n=>console.log("Your Cart: ",n))
+}
+let multiPro=[{category:"TV",str:"Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)",qty:2},{category:"TV",str:"Philips 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)",qty:1}]
 
-chooseProduct(multiPro)
+
+
 
 
 
 function checkOutPrice(proArr){
-  chooseProduct(proArr).then(n=>{
-
+   //This gives the total cost of the cart
+  return chooseProduct(proArr).then(n=>{
+let totalCost=0;
      for(let i of n){
-      
+        for(let j of i){
+         totalCost+=j.subTotalCost
+        }              
      }
+     
+     return totalCost;
   })
 }
 
+chooseProduct(multiPro).then(n=>console.log(n))
+checkOutPrice(multiPro).then(n=>console.log("Total Cost:",n))
 
 
-let burra=[
-  [
-    {
-      productTitle: 'Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)',
-      variant: '65 Inches',
-      price: 45000,
-      productVisualization: [Array],
-      Stock: 10,
-      features: [Array]
-    }
-  ],
-  [
-    {
-      productTitle: 'Philips 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)',
-      variant: '65 Inches',
-      price: 45000,
-      productVisualization: [Array],
-      Stock: 10,
-      features: [Array]
-    }
-  ]
-]
+
+// Type 2:Structured with the help of OOP in javascript:-
+
 
 

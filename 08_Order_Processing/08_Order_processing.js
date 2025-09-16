@@ -208,9 +208,10 @@ let productSearch=search("TV").then(n=>console.log(n)).catch(n=>console.log(n))
 
 
 
-function addToCart(str){
-   return search("TV").then(n=>{
-      let cart=[];
+function addToCart(str,category){
+   let cart=[];
+   return search(category).then(n=>{
+      
 
       for(let i of n){
          if(i.productTitle===str){
@@ -221,9 +222,56 @@ function addToCart(str){
    })
 }
 
-addToCart("Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)").then(n=>console.log("Your Cart:",n)).catch(n=>console.log(n))
 
 
 
+
+function chooseProduct(productArr){
+   let arr=[];
+   for(let i of productArr){
+      arr.push(addToCart(i.str,i.category));
+   }
+   return Promise.all(arr).then(n=>n.filter(n=>n.length!=0)).then(n=>{console.log("Your Cart:",n); return n})
+}
+
+let multiPro=[{category:"TV",str:"Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)"},{category:"TV",str:"Philips 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)"}]
+
+chooseProduct(multiPro)
+
+
+
+function checkOutPrice(proArr){
+  chooseProduct(proArr).then(n=>{
+
+     for(let i of n){
+      
+     }
+  })
+}
+
+
+
+let burra=[
+  [
+    {
+      productTitle: 'Xiaomi MI 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)',
+      variant: '65 Inches',
+      price: 45000,
+      productVisualization: [Array],
+      Stock: 10,
+      features: [Array]
+    }
+  ],
+  [
+    {
+      productTitle: 'Philips 165 cm (65 inches) X Series 4K Ultra HD Smart Google LED TV L65M8-A2IN (Black)',
+      variant: '65 Inches',
+      price: 45000,
+      productVisualization: [Array],
+      Stock: 10,
+      features: [Array]
+    }
+  ]
+]
 
 

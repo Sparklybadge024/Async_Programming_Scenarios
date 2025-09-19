@@ -11,16 +11,48 @@ addBrand(brandName){
 
 addCategory(brandName,categoryName){
     if(this.products.has(brandName)){
-       this.products.brandName.categoryName=[]
+       this.products.get(brandName)[categoryName]={}
     }else{
-        this.products.set(brandName,{categoryName:[]})
+        this.addBrand(brandName);
+        this.products.get(brandName)[categoryName]={}
     }
 }
 }
+// testing the actual code
+let s1=new Store;
+s1.addBrand("Motorolla")
+console.log(s1);
+s1.addCategory("Motorolla","Mobile Phones")
+console.log(s1);
+s1.addBrand("Motorolla")
+console.log(s1);
+s1.addCategory("acer","Laptops")
+console.log(s1);
 
-let products=new Map();
 
-products.set("acer",{})
-products.set("asus",{})
-products.set("Lenovo",{})
-console.log(products);
+// Test code for mapping
+// let store=new Map();
+// function addBrand(brandName){
+//     if(!store.has(brandName)){
+//         store.set(brandName,{})
+//     }
+//     return store;
+// }
+
+// console.log(store);
+// console.log(addBrand("acer"));
+// console.log(store);
+// console.log(addBrand("acer"));
+
+// function addCategory(brandName,categoryName){
+//     if(store.has(brandName)){
+//         store.get(brandName)[categoryName]={}
+//     }else{
+//         addBrand(brandName);
+//         store.get(brandName)[categoryName]={}
+//     }
+// return store;
+// }
+
+// addCategory("acer","Laptop")
+// console.log(store);

@@ -21,6 +21,10 @@ addCategory(brandName,categoryName){
 }
 
 addProduct(brand,category,productObj){
+    let obj=productObj;
+    if(typeof obj.productTitle!=='string'||typeof obj.price!=='number'){
+        return `Product can't be uploaded because vital details of the product are missing.`
+    }
     if(!this.products.has(brand)){
         this.addBrand(brand);
         this.addCategory(brand,category);
@@ -28,10 +32,12 @@ addProduct(brand,category,productObj){
     if(!this.products.get(brand)[category]){
         this.addCategory(brand,category);
     }
+    
     this.products.get(brand)[category].push(productObj)
     
     return this.products.get(brand)[category]
 }
+
 
 }
 // testing the actual code
@@ -44,7 +50,7 @@ s1.addBrand("Motorolla")
 console.log(s1);
 s1.addCategory("acer","Laptops")
 console.log(s1);
-console.log(s1.addProduct("Motorolla","Mobile Phones",{productTitle:"Motorola Moto G85 5G (128, Cobalt Blue, New)",variant:"128GB, Cobalt Blue",price:15949,Stock:10,productVisualization:["Image1","Image2","Image3","Video1"],features:[]}));
+console.log(s1.addProduct("Motorolla","Mobile Phones",{productTitle:"Motorola Moto G85 5G (128, Cobalt Blue, New)",variant:"128GB, Cobalt Blue",price:15949,stock:10,productVisualization:["Image1","Image2","Image3","Video1"],features:[]}));
 
 
 

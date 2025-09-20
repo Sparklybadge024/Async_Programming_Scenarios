@@ -17,6 +17,21 @@ addCategory(brandName,categoryName){
         this.products.get(brandName)[categoryName]={}
     }
 }
+
+addProduct(brand,category,productObj){
+    if(this.products.has(brand)){
+        if(this.products[brand].has(category)){
+            this.products.get(brand)[category][productObj]
+        }else{
+            this.addCategory(brand,category);
+            this.products.get(brand)[category][productObj]
+        }
+    }else{
+        this.addBrand(brand);
+        this.addCategory(brand,category);
+        this.addProduct(brand,category,productObj)
+    }
+}
 }
 // testing the actual code
 let s1=new Store;
@@ -28,7 +43,7 @@ s1.addBrand("Motorolla")
 console.log(s1);
 s1.addCategory("acer","Laptops")
 console.log(s1);
-
+s1.addProduct("Motorolla","Mobile Phones",{productTitle:"Motorola Moto G85 5G (128, Cobalt Blue, New)",variant:"128GB, Cobalt Blue",price:15949,stock:10,productVisualization:["Image1","Image2","Image3","Video1"],features:[]})
 
 // Test code for mapping
 // let store=new Map();

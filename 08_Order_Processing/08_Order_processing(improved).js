@@ -46,7 +46,11 @@ addProduct(brand,category,productObj){
     return this.products.get(brand)[category]
 }
 
-
+showProduct(brand){
+    if(this.products.has(brand)){
+        return this.products.get(brand)
+    }
+}
 }
 // testing the actual code
 let s1=new Store;

@@ -22,8 +22,8 @@ addCategory(brandName,categoryName){
 
 addProduct(brand,category,productObj){
     let obj=productObj;
-    if(typeof obj.productTitle!=='string'||typeof obj.price!=='number'){
-        return `Product can't be uploaded because vital details of the product are missing.`
+    if(typeof obj.productTitle!=='string'||typeof obj.price!=='number'||obj.productTitle.length===0||obj.price<=0){
+        return {success:false,reason:`Product can't be uploaded because vital details of the product are missing.`}
     }
     if(!this.products.has(brand)){
         this.addBrand(brand);

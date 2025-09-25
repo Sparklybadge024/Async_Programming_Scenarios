@@ -53,10 +53,10 @@ removeProduct(brand,category,productTitle,variant,qty=null){
             let pro=this.products.get(brand)[category][i]
         if(pro.productTitle===productTitle&&pro.variant===variant&&qty===null){
             this.products.get(brand)[category].splice(i,1)
-        }else{
+        }else if(pro.productTitle===productTitle&&pro.variant===variant){
             pro.stock=qty;
+            }
         }
-    }
     }else{
         throw new Error("Nothing Found")
     }
@@ -90,7 +90,7 @@ console.log(s1);
 console.log(s1.showProduct("Motorolla"));
 s1.removeProduct("Motorolla","Mobile Phones","Motorola Moto G85 5G (128, Cobalt Blue, New)","128GB",200)
 console.log(s1.showProduct("Motorolla"));
-
+console.log(s1.showProduct("Samsung"));
 
 
 

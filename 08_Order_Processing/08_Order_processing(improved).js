@@ -48,12 +48,13 @@ addProduct(brand,category,productObj){
 }
 
 removeProduct(brand,category,productTitle,variant,qty=null){
-    if(this.products.has(brand)[category]){
-        for(let i of this.products.get(brand)[category]){
-        if(i.productTitle===productTitle&&i.variant===variant&&qty===null){
-            this.products.get(brand)[category]=this.products.get(brand)[category].splice(i,1)
-        }else if(i.productTitle===productTitle&&i.variant===variant){
-            i.stock=qty;
+    if(this.products.has(brand)){
+        for(let i=0;i<this.products.get(brand)[category].length;i++){
+            let pro=this.products.get(brand)[category][i]
+        if(pro.productTitle===productTitle&&pro.variant===variant&&qty===null){
+            this.products.get(brand)[category].splice(i,1)
+        }else{
+            pro.stock=qty;
         }
     }
     }else{
@@ -86,11 +87,13 @@ console.log(s1);
 console.log(s1.showProduct("Samsung"));
 s1.removeProduct("Samsung","Mobiles","Galaxy S25","128GB")
 console.log(s1);
-
-console.log(s1.showProduct("Samsung"))
-
-s1.removeProduct("Motorolla","Mobile Phones","Motorola Moto G85 5G (128, Cobalt Blue, New)","128GB, Cobalt Blue",15);
 console.log(s1.showProduct("Motorolla"));
+s1.removeProduct("Motorolla","Mobile Phones","Motorola Moto G85 5G (128, Cobalt Blue, New)","128GB",200)
+console.log(s1.showProduct("Motorolla"));
+
+
+
+
 
 
 

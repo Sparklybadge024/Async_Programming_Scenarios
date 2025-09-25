@@ -49,7 +49,7 @@ addProduct(brand,category,productObj){
 
 removeProduct(brand,category,productTitle,variant,qty=null){
     if(this.products.has(brand)){
-        for(let i=0;i<this.products.get(brand)[category].length;i++){
+        for(let i=this.products.get(brand)[category].length-1;i>=0;i--){
             let pro=this.products.get(brand)[category][i]
         if(pro.productTitle===productTitle&&pro.variant===variant&&qty===null){
             this.products.get(brand)[category].splice(i,1)

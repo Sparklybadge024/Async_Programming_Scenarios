@@ -48,16 +48,18 @@ addProduct(brand,category,productObj){
 }
 
 removeProduct(brand,category,productTitle,variant,qty=null){
-    if(this.products.has(brand)){
+    let remove={success: true, action: "removed", product:[]}
+    let update={success: true, action: "updated", product:[]}
+    if(this.products.has(brand)&&category in this.products.get(brand)){
         for(let i=this.products.get(brand)[category].length-1;i>=0;i--){
             let pro=this.products.get(brand)[category][i]
         if(pro.productTitle===productTitle&&pro.variant===variant&&qty===null){
 
             this.products.get(brand)[category].splice(i,1)
-            return {success: true, action: "removed", product:{Title:productTitle,Variant:variant}}
+            remove.product.push({Title:productTitle,Variant:variant})
         }else if(pro.productTitle===productTitle&&pro.variant===variant){
             pro.stock=qty;
-            return {success: true, action: "updated", product:{Title:productTitle,Variant:variant,Updated_Quantity:qty}}
+            update.product.push({Title:productTitle,Variant:variant,Updated_Quantity:qty})
             }
         }
     }else{

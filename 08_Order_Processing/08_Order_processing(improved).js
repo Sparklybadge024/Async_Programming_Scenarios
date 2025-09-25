@@ -62,7 +62,16 @@ removeProduct(brand,category,productTitle,variant,qty=null){
             update.product.push({Title:productTitle,Variant:variant,Updated_Quantity:qty})
             }
         }
+    }
+    if(remove.product.length!==0&&update.product.length!==0){
+        return {remove,update}
+    }
+    if(remove.product.length!==0){
+        return remove;
+    }else if(update.product.length!==0){
+        return update;
     }else{
+     
         throw new Error("Nothing Found")
     }
     

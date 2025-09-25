@@ -52,15 +52,18 @@ removeProduct(brand,category,productTitle,variant,qty=null){
         for(let i=this.products.get(brand)[category].length-1;i>=0;i--){
             let pro=this.products.get(brand)[category][i]
         if(pro.productTitle===productTitle&&pro.variant===variant&&qty===null){
+
             this.products.get(brand)[category].splice(i,1)
+            return {success: true, action: "removed", product:{Title:productTitle,Variant:variant}}
         }else if(pro.productTitle===productTitle&&pro.variant===variant){
             pro.stock=qty;
+            return {success: true, action: "updated", product:{Title:productTitle,Variant:variant,Updated_Quantity:qty}}
             }
         }
     }else{
         throw new Error("Nothing Found")
     }
-    return this.products;
+    
 }
 
 showProduct(brand){

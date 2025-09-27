@@ -20,8 +20,10 @@ This repository contains real-world scenarios implemented using JavaScript Promi
    - Simulates fetching from multiple servers with random delays.  
    - Demonstrates `Promise.race()` behavior.  
 
-5. [Weather API Simulation](https://github.com/Sparklybadge024/Async_Programming_Scenarios/tree/main/05_weather_fetch.js#readme):  
+5. [Weather API Simulation:](https://github.com/Sparklybadge024/Async_Programming_Scenarios/tree/main/05_weather_fetch.js#readme)
    Simulates fetching weather information asynchronously with random delays and errors.  
    - Learnings: Handling promises with `setTimeout`, simulating real-world API delays.
 ## 🚀 Goal
 This repo is part of my journey to master asynchronous programming in JavaScript. Each scenario reflects real-world cases where async logic is crucial.
+
+

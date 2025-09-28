@@ -1,9 +1,11 @@
 class Store{
+    // This class is basically for the sellers so that they can manage their products.
  constructor(){
     this.products=new Map();
 }
 
 addBrand(brandName){
+    // This method will add a brand in the online store.
     if(!this.products.has(brandName)){
         this.products.set(brandName,{});
     }
@@ -11,6 +13,7 @@ addBrand(brandName){
 }
 
 addCategory(brandName,categoryName){
+    // This method will add a category in the brand.
     if(!this.products.has(brandName)){
        this.addBrand(brandName);
        this.products.get(brandName)[categoryName]=[];
@@ -21,6 +24,7 @@ addCategory(brandName,categoryName){
 }
 
 addProduct(brand,category,productObj){
+    // This method will add Product details.
     let obj=productObj;
     if(typeof obj.productTitle!=='string'||typeof obj.price!=='number'||obj.productTitle.length===0||obj.price<=0){
         return {success:false,reason:`Product can't be uploaded because vital details of the product are missing.`}
@@ -48,6 +52,7 @@ addProduct(brand,category,productObj){
 }
 
 removeProduct(brand,category,productTitle,variant,qty=null){
+    // This will remove products that are discontinued and also this will update the Stock.
     let remove={success: true, action: "removed", product:[]}
     let update={success: true, action: "updated", product:[]}
     if(this.products.has(brand)&&category in this.products.get(brand)){
@@ -78,10 +83,22 @@ removeProduct(brand,category,productTitle,variant,qty=null){
 }
 
 showProduct(brand){
+    // This method will show the products a brand contains.
     if(this.products.has(brand)){
         return this.products.get(brand)
     }
 }
+}
+
+class User{
+    constructor(product,quantity,subTotal){
+        this.product=product;
+        this.quantity=quantity;
+        this.subTotal=subTotal;
+        this.cart=[];    
+    }
+    
+
 }
 // testing the actual code
 let s1=new Store;

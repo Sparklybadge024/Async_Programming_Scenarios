@@ -55,7 +55,7 @@ addProduct(brand,category,productObj){
 removeProduct(brand,category,productTitle,variant,qty=null){
     // This will remove products that are discontinued and also this will update the Stock.
     
-    let update={action, product:[]}
+    let update={action:"", product:[]}
     if(Store.products.has(brand)&&category in Store.products.get(brand)){
         for(let i=Store.products.get(brand)[category].length-1;i>=0;i--){
             let pro=Store.products.get(brand)[category][i]
@@ -76,17 +76,8 @@ removeProduct(brand,category,productTitle,variant,qty=null){
             }
         }
     }
-    if(remove.product.length!==0&&update.product.length!==0){
-        return {remove,update}
-    }
-    if(remove.product.length!==0){
-        return remove;
-    }else if(update.product.length!==0){
-        return update;
-    }else{
-     
-        throw new Error("Nothing Found")
-    }
+    return update;
+    
     
 }
 

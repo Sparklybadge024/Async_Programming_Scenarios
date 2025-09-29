@@ -1,26 +1,27 @@
 class Store{
     // This class is basically for the sellers so that they can manage their products.
- constructor(){
-    this.products=new Map();
-}
+ 
+    static products=new Map();
+
 
 addBrand(brandName){
     // This method will add a brand in the online store.
-    if(!this.products.has(brandName)){
-        this.products.set(brandName,{});
+    if(!Store.products.has(brandName)){
+        Store.products.set(brandName,{});
     }
-    return this.products.get(brandName)
+    return Store.products.get(brandName)
 }
 
 addCategory(brandName,categoryName){
     // This method will add a category in the brand.
-    if(!this.products.has(brandName)){
+    if(!Store.products.has(brandName)){
        this.addBrand(brandName);
-       this.products.get(brandName)[categoryName]=[];
-    }else{
-        this.products.get(brandName)[categoryName]=[];
+       Store.products.get(brandName)[categoryName]=[];
     }
-    return this.products.get(brandName)
+    if(!Store.products.get(brandName)[categoryName]){
+        Store.products.get(brandName)[categoryName]=[];
+    }
+    return Store.products.get(brandName)
 }
 
 addProduct(brand,category,productObj){
@@ -30,15 +31,15 @@ addProduct(brand,category,productObj){
         return {success:false,reason:`Product can't be uploaded because vital details of the product are missing.`}
     }
 
-    if(!this.products.has(brand)){
+    if(!Store.products.has(brand)){
         this.addBrand(brand);
         this.addCategory(brand,category);
     }
-    if(!this.products.get(brand)[category]){
+    if(!Store.products.get(brand)[category]){
         this.addCategory(brand,category);
     }
 
-    for(let i of this.products.get(brand)[category]){
+    for(let i of Store.products.get(brand)[category]){
         if(i.productTitle===obj.productTitle&&i.variant===obj.variant){
            i.stock+=obj.stock;
            return i;
@@ -46,21 +47,21 @@ addProduct(brand,category,productObj){
         
     }
     
-    this.products.get(brand)[category].push(productObj)
+    Store.products.get(brand)[category].push(productObj)
     
-    return this.products.get(brand)[category]
+    return Store.products.get(brand)[category]
 }
 
 removeProduct(brand,category,productTitle,variant,qty=null){
     // This will remove products that are discontinued and also this will update the Stock.
     let remove={success: true, action: "removed", product:[]}
     let update={success: true, action: "updated", product:[]}
-    if(this.products.has(brand)&&category in this.products.get(brand)){
-        for(let i=this.products.get(brand)[category].length-1;i>=0;i--){
-            let pro=this.products.get(brand)[category][i]
+    if(Store.products.has(brand)&&category in Store.products.get(brand)){
+        for(let i=Store.products.get(brand)[category].length-1;i>=0;i--){
+            let pro=Store.products.get(brand)[category][i]
         if(pro.productTitle===productTitle&&pro.variant===variant&&qty===null){
 
-            this.products.get(brand)[category].splice(i,1)
+            Store.products.get(brand)[category].splice(i,1)
             remove.product.push({Title:productTitle,Variant:variant})
         }else if(pro.productTitle===productTitle&&pro.variant===variant){
             pro.stock=qty;
@@ -84,8 +85,8 @@ removeProduct(brand,category,productTitle,variant,qty=null){
 
 showProduct(brand){
     // This method will show the products a brand contains.
-    if(this.products.has(brand)){
-        return this.products.get(brand)
+    if(Store.products.has(brand)){
+        return Store.products.get(brand)
     }
 }
 }

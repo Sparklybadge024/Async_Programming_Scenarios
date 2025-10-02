@@ -95,7 +95,9 @@ class User{
     }
     
     addToCart(product,quantity){
-
+        if(showProduct(product.brand)){
+            
+        }
     }
 
 }
@@ -122,6 +124,7 @@ s1.removeProduct("Motorolla","Mobile Phones","Motorola Moto G85 5G (128, Cobalt 
 console.log(s1.showProduct("Motorolla"));
 console.log(s1.showProduct("Samsung"));
 s1.addProduct("Motorolla","Mobile Phones",{productTitle:"Motorola Moto G85 5G (128, Cobalt Blue, New)",variant:"128GB, Cobalt Blue",price:15949,stock:10,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+console.log(Store.products);
 
 
 

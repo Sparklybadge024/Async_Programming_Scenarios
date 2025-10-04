@@ -278,6 +278,17 @@ s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WF-1000XM5 Bes
 s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WH-1000XM5 Best Active Noise Cancelling Wireless Bluetooth Over Ear Headphones with Mic for Clear Calling,Battery Life 30 Hours -Black",variant:"Headphone",price:24790,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
 s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WH-1000XM5 Best Active Noise Cancelling Wireless Bluetooth Over Ear Headphones with Mic for Clear Calling,Battery Life 30 Hours-Mid Night Blue",variant:"Headphone",price:24854,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
 
+s1.addProduct("SONY","Gaming",{productTitle:"Sony PlayStation5 Gaming Console (Slim)",variant:"Disc",price:49990,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","Gaming",{productTitle:"Sony PlayStation®5 Digital Edition (slim) Console Video Game",variant:"Digital",price:44990,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","Gaming",{productTitle:"PS5® Console Slim – NBA 2K26 Bundle",variant:"Disc",price:54490,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","Gaming",{productTitle:"Sony PS5 Console - Marvel’s Spider-Man 2 Limited Edition Bundle",variant:"Disc",price:54490,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","Gaming",{productTitle:"Sony PS5 Console - Ghost of Yoeti Limited Edition Bundle",variant:"Disc",price:54490,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+
+s1.addProduct("SONY","Cameras",{productTitle:"Sony Alpha ILCE-7M4K Full-Frame Hybrid Camera 33MP Interchangeable-Lens Mirrorless Camera|28-70mm Digital Zoom|4K 60P Video Recording|Real-Time Eye AF+Rechargeable Battery(NP-FZ100) - Black",variant:"Full Frame Camera",price:196989,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","Cameras",{productTitle:"Sony Alpha ILCE-6700M APS-C Interchangeable-Lens Mirrorless Camera (Body + 18-135 mm Power Zoom Lens) | Made for Creators | 26.0 MP | Artificial Intelligence based Autofocus | 4K 60p Recording - Black",variant:"APS-C",price:145988,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","Cameras",{productTitle:"",variant:"APS-C",price:145988,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+
+
 
 
 

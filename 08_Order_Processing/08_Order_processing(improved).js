@@ -272,6 +272,12 @@ s1.addProduct("SONY","TVs",{productTitle:"Sony BRAVIA 8 Series 164 cm (65 inches
 s1.addProduct("SONY","TVs",{productTitle:"Sony BRAVIA 9 Series 189 cm (75 inches) 4K Ultra HD AI Smart Mini LED Google TV K-75XR90 (Black)-3 Years Warranty for Limited Period",variant:"XR TV",price:384990,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
 s1.addProduct("SONY","TVs",{productTitle:"Sony 215 cm (85 inches) BRAVIA 5 Series 4K Ultra HD Smart Mini LED Google TV K-85XR55A-3 Years Warranty for Limited Period",variant:"XR TV",price:366990,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
 
+s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WF-1000XM5 Active Noise Cancelling Wireless Bluetooth in Ear Earbuds with Mic, Up to 36 Hours Battery Life - Black",variant:"TWS",price:19499,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WF-1000XM5 Best Active Noise Cancelling Wireless Bluetooth Earbuds with Mic, TWS, Up to 36 Hours Battery Life - Silver",variant:"TWS",price:19499,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WF-1000XM5 Best Active Noise Cancelling Wireless Bluetooth in Ear Earbuds with Mic, TWS, Up to 36 Hours Battery, 360 Reality Audio- Smoky Pink",variant:"TWS",price:19990,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WH-1000XM5 Best Active Noise Cancelling Wireless Bluetooth Over Ear Headphones with Mic for Clear Calling,Battery Life 30 Hours -Black",variant:"Headphone",price:24790,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+s1.addProduct("SONY","EarBuds and headphones",{productTitle:"Sony WH-1000XM5 Best Active Noise Cancelling Wireless Bluetooth Over Ear Headphones with Mic for Clear Calling,Battery Life 30 Hours-Mid Night Blue",variant:"Headphone",price:24854,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]});
+
 
 
 

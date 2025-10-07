@@ -94,10 +94,8 @@ class User{
         this.cart=[];    
     }
     
-    addToCart(product,quantity){
-        if(showProduct(product.brand)){
-            
-        }
+    storeBrowse(category){
+        Store.products.get(category)
     }
 
 }

@@ -156,3 +156,36 @@ const scores = new Map([
   ["Charlie", 78]
 ]);
 console.log(scores);
+
+scores.forEach((key,value)=>{key+=5; console.log(key,value)})
+// 90 Alice
+// 97 Bob
+// 83 Charlie
+
+// Answer 15:-
+const users0 = [
+  {id: 1, name: "Alice"},
+  {id: 2, name: "Bob"},
+  {id: 3, name: "Charlie"}
+];
+
+let user0Map=new Map();
+
+user0Map.set(users0[0].id,users0[0].name);
+user0Map.set(users0[1].id,users0[1].name);
+user0Map.set(users0[2].id,users0[2].name);
+
+console.log(user0Map.get(users0[2].id));//Charlie
+
+
+// user0Map.set(users0[2].id,users0[2].name); in this statement users0[2].id is key and users0[2].name is value ??
+
+// Answer 16:-
+const countries = new Map([
+  ["India", 140],
+  ["USA", 33],
+  ["Japan", 12],
+  ["China", 142]
+]);
+countries.forEach((value,key)=>console.log(value,key))
+

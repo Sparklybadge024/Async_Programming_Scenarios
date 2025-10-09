@@ -94,9 +94,7 @@ class User{
         this.cart=[];    
     }
     
-    storeBrowse(category){
-        Store.products.get(category)
-    }
+    
 
 }
 // testing the actual code
@@ -299,6 +297,8 @@ s1.addProduct("SONY","Home Theatre",{productTitle:"Sony SA-RS5 Wireless Rear Spe
 
 
 console.log(Store.products);
+let u1=new User;
+u1.storeBrowse()
 
 
 
@@ -307,7 +307,8 @@ console.log(Store.products);
 
 
 
-// Test code for mapping
+
+// // Test code for mapping
 // let store=new Map();
 // function addBrand(brandName){
 //     if(!store.has(brandName)){
@@ -338,9 +339,21 @@ console.log(Store.products);
 // function addProduct(brandName,categoryName,productObj){
 //     if(!store.has(brandName)){
 //         addBrand(brandName);
-//     }else if(!store.get(brandName)[categoryName]){
+//     }
+//     if(!store.has(brandName)[categoryName]){
 //         addCategory(brandName,categoryName);
 //     }else{
 //         store.get(brandName)[categoryName][productObj];
 //     }
 // }
+
+// function browse(){
+//     Store.products.forEach(i=>console.log(i))
+    
+// }
+// addProduct("apple","iPhone",{productTitle:"iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black",variant:"512 GB",price:102900,stock:30,productVisualization:["Image1","Image2","Image3","Video1"],features:[]})
+// console.log(store);
+// store.forEach(i=>console.log(i));
+
+
+

@@ -120,4 +120,39 @@ proPrice.set("Apple",50);
 proPrice.set("Banana",20);
 proPrice.set("Mango",30);
 
-proPrice.forEach((key,value)=>{if(value>25){console.log(key,value)}})
+proPrice.forEach((key,value)=>{if(key>25)console.log(key,value)})
+// 50 Apple
+// 30 Mango 
+
+// Answer 12:-
+let obj10={name:'Rishabh'};
+let obj20={name:'Alice'};
+
+let nameObj=new Map();
+nameObj.set(obj10,'Object1');
+nameObj.set(obj20,'Object2');
+
+nameObj.set(obj10,'Object10');
+
+console.log(nameObj);
+// Map(2) {
+//   { name: 'Rishabh' } => 'Object10',
+//   { name: 'Alice' } => 'Object2'
+// }
+
+console.log(nameObj.get(obj10));//Object10
+
+// Answer 13:-
+for(let [key,value] of nameObj){
+    console.log([key,value]);
+// [ { name: 'Rishabh' }, 'Object10' ]
+// [ { name: 'Alice' }, 'Object2' ]
+}
+
+// Answer 14:-
+const scores = new Map([
+  ["Alice", 85],
+  ["Bob", 92],
+  ["Charlie", 78]
+]);
+console.log(scores);

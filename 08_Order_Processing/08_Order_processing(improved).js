@@ -95,6 +95,7 @@ class User{
     }
     
     storeBrowse(category){
+        // This method will enable user to get all the product options in a particular category.
         let result=[];
         for(let [_,categories] of Store.products){
             if(categories[category]){
@@ -109,7 +110,12 @@ class User{
         }
     }
 
-    
+    viewAllBrands(){
+        // This method will enable user to see the available brands on the platform
+       return Store.products.keys();
+    }
+
+
 
 }
 // testing the actual code
@@ -314,6 +320,8 @@ s1.addProduct("SONY","Home Theatre",{productTitle:"Sony SA-RS5 Wireless Rear Spe
 
 let u1=new User;
 console.log(u1.storeBrowse("TVs"));
+console.log(u1.viewAllBrands());
+
 
 
 

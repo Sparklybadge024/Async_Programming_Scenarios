@@ -115,7 +115,23 @@ class User{
        return Store.products.keys();
     }
 
+    browseBrand(brandName){
+        // This method will help the user to explore different categories of a brand availble on the platform.
+        let sku=Store.products.get(brandName);
 
+        if(sku===undefined){
+            return `Brand is not found`;
+        }else{
+            return sku;
+        }
+    
+    }
+
+    addToCart(category,str,quantity){
+        // This is the add To Cart feature of e commerce websites.
+        this.storeBrowse(category)
+        
+    }
 
 }
 // testing the actual code
@@ -321,7 +337,8 @@ s1.addProduct("SONY","Home Theatre",{productTitle:"Sony SA-RS5 Wireless Rear Spe
 let u1=new User;
 console.log(u1.storeBrowse("TVs"));
 console.log(u1.viewAllBrands());
-
+console.log(u1.browseBrand("SONY"));
+console.log(u1.addToCart("Mobile Phones","",""));
 
 
 

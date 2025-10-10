@@ -187,5 +187,22 @@ const countries = new Map([
   ["Japan", 12],
   ["China", 142]
 ]);
-countries.forEach((value,key)=>console.log(value,key))
 
+// function popCountry(country){
+//   let i=[a,b];
+
+//   for(let [value,key] of country){
+//     if(key>i){
+//       i=value
+//     }
+//   }
+
+//   return i;
+// }
+
+// console.log(popCountry(countries));
+
+    
+
+let i=['a','b']
+console.log(i[0]);

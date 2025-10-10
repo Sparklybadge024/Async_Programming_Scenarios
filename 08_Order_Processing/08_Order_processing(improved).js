@@ -94,14 +94,22 @@ class User{
         this.cart=[];    
     }
     
-    storeBrowse(){
-        
-        for(let [key,_] of Store.products){
-            console.log(key);
-            
+    storeBrowse(category){
+        let result=[];
+        for(let [_,categories] of Store.products){
+            if(categories[category]){
+               result.push(categories[category]);
+            }
         }
         
+        if(result.length===0){
+            return `No result found`
+        }else{
+            return result;
+        }
     }
+
+    
 
 }
 // testing the actual code
@@ -305,7 +313,8 @@ s1.addProduct("SONY","Home Theatre",{productTitle:"Sony SA-RS5 Wireless Rear Spe
 
 
 let u1=new User;
-u1.storeBrowse();
+console.log(u1.storeBrowse("TVs"));
+
 
 
 

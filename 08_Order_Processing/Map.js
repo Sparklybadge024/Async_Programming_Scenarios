@@ -188,21 +188,85 @@ const countries = new Map([
   ["China", 142]
 ]);
 
-// function popCountry(country){
-//   let i=[a,b];
 
-//   for(let [value,key] of country){
-//     if(key>i){
-//       i=value
-//     }
-//   }
+function popCountry(country){
+  let i=0;
 
-//   return i;
-// }
+  for(let [_,key] of country){
+    if(key>i){
+      i=key
+    }
+  }
+  
+  for(let [value,key] of country){
+    if(key===i){
+      return value;
+    }
+  }
+}
 
-// console.log(popCountry(countries));
+console.log(popCountry(countries));//China
 
     
+// Answer 17:-
+let coc=Object.fromEntries(countries)
+console.log(coc);//{ India: 140, USA: 33, Japan: 12, China: 142 }
 
-let i=['a','b']
-console.log(i[0]);
+// Answer 18:-
+const map1 = new Map([["a", 1], ["b", 2]]);
+const map2 = new Map([["b", 3], ["c", 4]]);
+
+let map3=new Map();
+
+for(let [key,value] of map1){
+  map3.set(key,value);
+}
+for(let [key,value] of map2){
+  map3.set(key,value);
+}
+
+console.log(map3);//Map(3) { 'a' => 1, 'b' => 3, 'c' => 4 }
+
+// Answer 19:-
+const data = ["apple", "banana", "apple", "mango", "banana", "apple"];
+
+let fruMap=new Map();
+
+function fruCount(info){
+  let count=0;
+  let fruArr=[];
+
+  for(let i of info){
+    if(!fruArr.includes(i)){
+      fruArr.push(i)
+
+      for(let j of info){
+        if(j===i){
+          count++;
+          
+        }
+        
+      }
+      fruMap.set(i,count)
+          count=0;
+    }
+
+
+  }
+  return fruMap;
+}
+console.log(fruCount(data));//Map(3) { 'apple' => 3, 'banana' => 2, 'mango' => 1 }
+
+// Answer 20:-
+let toMap=[["a", 1], ["b", 2], ["a", 3], ["c", 4]];
+let toma=new Map();
+for(let i of toMap){
+   toma.set(i[0],i[1])
+}
+console.log(toma);//Map(3) { 'a' => 3, 'b' => 2, 'c' => 4 }
+
+
+
+
+
+

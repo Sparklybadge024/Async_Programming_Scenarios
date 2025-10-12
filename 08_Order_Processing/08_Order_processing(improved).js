@@ -147,9 +147,7 @@ class User{
             if(j.productTitle===str&&j.variant===variant){
                 for(let k of this.cart){
                     // Including this loop to protect the cart from duplicacy.
-                    if(this.cart.length===0){
-                        break;
-                    }else if(k.title===str&&k.model===variant){
+                    if(k.title===str&&k.model===variant){
                         k.qty+=quantity;
                         return this.cart;
                     }

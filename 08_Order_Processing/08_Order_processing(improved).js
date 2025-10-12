@@ -127,9 +127,19 @@ class User{
     
     }
 
-    addToCart(category,str,quantity){
+    addToCart(category,str,variant){
         // This is the add To Cart feature of e commerce websites.
-        this.storeBrowse(category)
+        
+        let coco=this.storeBrowse(category)
+        
+        for(let i of coco){
+           for(let j of i){
+            if(j.productTitle===str&&j.variant===variant){
+               this.cart.push(j)
+            }
+           }
+        }
+        return this.cart;
         
     }
 
@@ -338,7 +348,7 @@ let u1=new User;
 console.log(u1.storeBrowse("TVs"));
 console.log(u1.viewAllBrands());
 console.log(u1.browseBrand("SONY"));
-console.log(u1.addToCart("Mobile Phones","",""));
+console.log(u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB"));
 
 
 

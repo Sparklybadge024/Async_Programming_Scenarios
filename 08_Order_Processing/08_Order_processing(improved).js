@@ -140,9 +140,20 @@ class User{
         
         let coco=this.storeBrowse(category)//First the user will randomly search any product category for e.g:- Mobile Phones, then the website will show all the available options to the user.
         
+                
+
         for(let i of coco){
            for(let j of i){
             if(j.productTitle===str&&j.variant===variant){
+                for(let k of this.cart){
+                    // Including this loop to protect the cart from duplicacy.
+                    if(this.cart.length===0){
+                        break;
+                    }else if(k.title===str&&k.model===variant){
+                        k.qty+=quantity;
+                        return this.cart;
+                    }
+                }
                
                this.cart.push({title:j.productTitle,model:variant,qty:quantity,Price:j.price})                                 
               }
@@ -360,6 +371,7 @@ console.log(u1.viewAllBrands());
 console.log(u1.browseBrand("SONY"));
 u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB",2)
 u1.addToCart("Tablets","Apple iPad Pro 13″ (M4): Ultra Retina XDR Display, 256GB, Landscape 12MP Front Camera / 12MP Back Camera, LiDAR Scanner, Wi-Fi 6E, Face ID, All-Day Battery Life, Standard Glass — Space Black","256GB, Wi-Fi",2)
+u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB",2)
 console.log(u1.cart);
 
 

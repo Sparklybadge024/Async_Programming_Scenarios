@@ -135,15 +135,15 @@ class User{
     
     }
 
-    addToCart(category,str,variant){
+    addToCart(category,str,variant,quantity=1){
         // This is the add To Cart feature of e commerce websites.
         
-        let coco=this.storeBrowse(category)
+        let coco=this.storeBrowse(category)//First the user will randomly search any product category for e.g:- Mobile Phones, then the website will show all the available options to the user.
         
         for(let i of coco){
            for(let j of i){
             if(j.productTitle===str&&j.variant===variant){
-               this.cart.push(j)
+               this.cart.push({title:j.productTitle,model:variant,qty:quantity,price:quantity*j.price})
             }
            }
         }

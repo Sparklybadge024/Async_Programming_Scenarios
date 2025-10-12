@@ -112,7 +112,11 @@ class User{
 
     viewAllBrands(){
         // This method will enable user to see the available brands on the platform
-       return Store.products.keys();
+        let keys=[];
+        for(let [key,_] of Store.products){
+           keys.push(key);   
+        }
+        return keys
     }
 
     browseBrand(brandName){
@@ -122,7 +126,11 @@ class User{
         if(sku===undefined){
             return `Brand is not found`;
         }else{
-            return sku;
+            return {
+                brand: brandName,
+                availableCategories:Object.keys(sku),
+                catalog:sku
+            };
         }
     
     }

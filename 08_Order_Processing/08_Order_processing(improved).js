@@ -91,7 +91,8 @@ showProduct(brand){
 
 class User{
     constructor(){
-        this.cart=[];    
+        this.cart=[];
+        this.subTotal=0;
     }
     
     storeBrowse(category){
@@ -139,7 +140,7 @@ class User{
         // This is the add To Cart feature of e commerce websites.
         
         let coco=this.storeBrowse(category)//First the user will randomly search any product category for e.g:- Mobile Phones, then the website will show all the available options to the user.
-        let subTotal=0;
+        
                 
 
         for(let i of coco){
@@ -153,21 +154,23 @@ class User{
                     }
                 }
                
-               this.cart.push({title:j.productTitle,model:variant,qty:quantity,Price:j.price})                                 
-                for(let k of this.cart){
-           subTotal+=k.qty*k.Price;
-
-        }
-        this.cart.push({subTotal});
+               this.cart.push({title:j.productTitle,model:variant,qty:quantity,Price:j.price})    
+                                                           
               }
            }
         }
-
-       
+        
     return this.cart;     
     }
 
-
+    subTotall(){
+        // This method will show the total cost of the cart items;
+        for(let k of this.cart){
+            this.subTotal+=Number(k.qty)*Number(k.Price)
+        }
+        this.cart.push({"SubTotal":this.subTotal});
+        return this.cart;
+    }
 
 }
 // testing the actual code
@@ -377,7 +380,7 @@ console.log(u1.browseBrand("SONY"));
 u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB",2)
 u1.addToCart("Tablets","Apple iPad Pro 13″ (M4): Ultra Retina XDR Display, 256GB, Landscape 12MP Front Camera / 12MP Back Camera, LiDAR Scanner, Wi-Fi 6E, Face ID, All-Day Battery Life, Standard Glass — Space Black","256GB, Wi-Fi",2)
 u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB",2)
-console.log(u1.cart);
+console.log(u1.subTotall());
 
 
 

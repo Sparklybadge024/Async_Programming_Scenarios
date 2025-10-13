@@ -165,13 +165,14 @@ class User{
 
     subTotall(){
         // This method will show the total cost of the cart items;
-        for(let k of this.cart){
-            this.subTotal+=Number(k.qty)*Number(k.Price)
-        }
-        this.cart.push(this.subTotal);
         this.subTotal=0;
-        this.cart.filter(i=>i!==NaN)
+        for(let k of this.cart){
+            this.subTotal+=Number(k.qty)*Number(k.Price);
+            }
+        this.cart["SubTotal"]=this.subTotal;   //Yes in javascript we can do this because here the array act like objects as a result we can do this.    
+        
         return this.cart;
+        
     }
 
 }

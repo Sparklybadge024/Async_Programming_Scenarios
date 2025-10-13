@@ -152,7 +152,7 @@ class User{
                         k.qty+=quantity;
                         return this.cart;
                     }
-                }
+                }         
                
                this.cart.push({title:j.productTitle,model:variant,qty:quantity,Price:j.price})    
                                                            
@@ -169,8 +169,8 @@ class User{
             this.subTotal+=Number(k.qty)*Number(k.Price)
         }
         this.cart.push(this.subTotal);
-        
-        
+        this.subTotal=0;
+        this.cart.filter(i=>i!==NaN)
         return this.cart;
     }
 

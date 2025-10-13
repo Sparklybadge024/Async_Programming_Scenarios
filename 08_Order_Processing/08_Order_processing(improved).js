@@ -139,7 +139,7 @@ class User{
         // This is the add To Cart feature of e commerce websites.
         
         let coco=this.storeBrowse(category)//First the user will randomly search any product category for e.g:- Mobile Phones, then the website will show all the available options to the user.
-        
+        let subTotal=0;
                 
 
         for(let i of coco){
@@ -154,9 +154,16 @@ class User{
                 }
                
                this.cart.push({title:j.productTitle,model:variant,qty:quantity,Price:j.price})                                 
+                for(let k of this.cart){
+           subTotal+=k.qty*k.Price;
+
+        }
+        this.cart.push({subTotal});
               }
            }
         }
+
+       
     return this.cart;     
     }
 

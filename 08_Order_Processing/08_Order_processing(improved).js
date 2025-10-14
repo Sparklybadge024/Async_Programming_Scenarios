@@ -175,6 +175,15 @@ class User{
         
     }
 
+    removeFromCart(str,vari){
+        for(let i of this.cart){
+            if(i.title===str&&i.model===vari){
+              this.cart.splice(i,1)
+            }
+        }
+        return this.cart;
+    }
+
 }
 // testing the actual code
 let s1=new Store;
@@ -383,6 +392,7 @@ console.log(u1.browseBrand("SONY"));
 u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB",2)
 u1.addToCart("Tablets","Apple iPad Pro 13″ (M4): Ultra Retina XDR Display, 256GB, Landscape 12MP Front Camera / 12MP Back Camera, LiDAR Scanner, Wi-Fi 6E, Face ID, All-Day Battery Life, Standard Glass — Space Black","256GB, Wi-Fi",2)
 u1.addToCart("Mobile Phones","iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB",2)
+u1.removeProduct("iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB")
 console.log(u1.subTotall());
 console.log(u1.subTotall());
 

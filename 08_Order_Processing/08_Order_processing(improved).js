@@ -397,7 +397,7 @@ s1.addProduct("SONY","Home Theatre",{productTitle:"Sony SA-RS5 Wireless Rear Spe
 
 
 
-let u1=new User;
+let u1=new User(100000);
 console.log(u1.storeBrowse("TVs"));
 console.log(u1.viewAllBrands());
 console.log(u1.browseBrand("SONY"));

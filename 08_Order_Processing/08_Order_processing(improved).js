@@ -175,11 +175,17 @@ class User{
         
     }
 
-    removeFromCart(str,vari){
-        // This method will remove items from cart.
-        this.cart=this.cart.filter(i=>!(i.title===str&&i.model===vari))
-        return this.cart;
+removeFromCart(str,vari){
+    for(let i=this.cart.length-1;i>=0;i--){
+        let k=this.cart[i];
+        if(k.title===str&&k.model===vari){
+            this.cart.splice(i,1)
+        }
     }
+    return this.cart;
+}
+    
+
 
 }
 // testing the actual code

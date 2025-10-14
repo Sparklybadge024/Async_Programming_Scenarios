@@ -185,6 +185,9 @@ removeFromCart(str,vari){
     return this.cart;
 }
     
+viewCart(){
+    return this.cart;
+}
 
 
 }
@@ -401,6 +404,7 @@ console.log(u1.subTotall());
 u1.removeFromCart("iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A19 Chip, Center Stage Front Camera for Smarter Group Selfies, Improved Scratch Resistance, All-Day Battery Life; Black","512 GB");
 console.log(u1.cart);
 
+console.log(u1.viewCart());
 
 
 

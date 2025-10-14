@@ -94,6 +94,7 @@ class User{
         this.cart=[];
         this.subTotal=0;
         this.account=account;
+        this.paymentMode=["Credit Card","Debit card","Net Banking","UPI","EMI"]
     }
     
     storeBrowse(category){
@@ -189,11 +190,33 @@ removeFromCart(str,vari){
 
 viewCart(){
     // This method will show the cart summary
+    this.subTotall();
     return this.cart;
 }
 
 placeOrder(address,paymentMode){
+  if(address.length===0){
+    throw new Error("Enter a valid address to continue")
+  }
+  if(!this.paymentMode.includes(paymentMode)){
+    throw new Error("Enter a payment mode to continue")
+  }
+
+  if(this.cart.SubTotal>this.account){
+    throw new Error("Not Enough Funds in the account,Please try other payment method or account")
+  }else{
+    this.account-=this.cart.SubTotal;
+  }
   
+  
+
+  return {
+    success: true,
+    message: `Order will be placed at ${address} within 7 days.`,
+    amountDebited:this.cart.SubTotal,
+    availableBalance:this.account,
+    itemsDelivered: this.cart.filter(i=>i!==this.cart.SubTotal) 
+  }
 }
 
 }
@@ -397,7 +420,7 @@ s1.addProduct("SONY","Home Theatre",{productTitle:"Sony SA-RS5 Wireless Rear Spe
 
 
 
-let u1=new User(100000);
+let u1=new User(1000000);
 console.log(u1.storeBrowse("TVs"));
 console.log(u1.viewAllBrands());
 console.log(u1.browseBrand("SONY"));
@@ -411,6 +434,11 @@ u1.removeFromCart("iPhone 17 512 GB: 15.93 cm (6.3″) Display with Promotion, A
 console.log(u1.cart);
 
 console.log(u1.viewCart());
+console.log(u1.placeOrder("Edinburgh, United Kingdom","UPI"));
+
+console.log(u1.account);
+
+console.log(u1.storeBrowse("Tablets"));
 
 
 

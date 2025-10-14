@@ -90,9 +90,10 @@ showProduct(brand){
 }
 
 class User{
-    constructor(){
+    constructor(account){
         this.cart=[];
         this.subTotal=0;
+        this.account=account;
     }
     
     storeBrowse(category){
@@ -185,10 +186,15 @@ removeFromCart(str,vari){
     return this.cart;
 }
     
+
 viewCart(){
+    // This method will show the cart summary
     return this.cart;
 }
 
+placeOrder(address,paymentMode){
+  
+}
 
 }
 // testing the actual code

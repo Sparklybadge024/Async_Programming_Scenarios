@@ -138,7 +138,7 @@ class User{
     
     }
 
-    addToCart(category,str,variant,quantity=1){
+    addToCart(brand,category,str,variant,quantity=1){
         // This is the add To Cart feature of e commerce websites.
         
         let coco=this.storeBrowse(category)//First the user will randomly search any product category for e.g:- Mobile Phones, then the website will show all the available options to the user.
@@ -435,12 +435,11 @@ console.log(u1.viewCart());
 console.log(u1.placeOrder("Edinburgh, United Kingdom","UPI"));
 
 console.log(u1.cart);
+console.log(Store.products.get("apple"));
 
-for(let [key,value] of Store.products){
-    let k1=[];
-    
-    
-}
+
+
+
 
 
 

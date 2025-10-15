@@ -207,9 +207,6 @@ placeOrder(address,paymentMode){
   }else{
     this.account-=this.cart.SubTotal;
   }
-  
-  
-
   return {
     success: true,
     message: `Order will be placed at ${address} within 7 days.`,
@@ -218,6 +215,7 @@ placeOrder(address,paymentMode){
     itemsDelivered: this.cart.filter(i=>i!==this.cart.SubTotal) 
   }
 }
+
 
 }
 // testing the actual code
@@ -436,16 +434,13 @@ console.log(u1.cart);
 console.log(u1.viewCart());
 console.log(u1.placeOrder("Edinburgh, United Kingdom","UPI"));
 
-console.log(u1.account);
+console.log(u1.cart);
 
-console.log(u1.storeBrowse("Tablets"));
-
-
-
-
-
-
-
+for(let [key,value] of Store.products){
+    let k1=[];
+    
+    
+}
 
 
 
